@@ -1,0 +1,49 @@
+
+@import "../../bootstrap/scss/bootstrap";
+
+.logo{
+    width: 72px;
+}
+
+.img-cov{
+    object-fit: cover; 
+    height: 350px;
+}
+ 
+.img-head{
+    object-fit: cover; 
+    height: 500px;
+    filter: brightness(50%);
+}
+.img-head1{
+    object-fit: cover; 
+    height: 250px;
+    opacity: 0.4;
+}
+
+/* Título del popover */
+.popover-header {
+    background-color: #280600; /* Fondo del encabezado */
+    color: #fff; /* Color del texto */
+}
+
+.social-icons a {
+    transition: transform 0.2s ease;
+    fill: #fff;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.my-tooltip + .tooltip {
+    background-color: #f39c12; /* Fondo único */
+    color: #000; /* Texto negro */
+    border-radius: 0; /* Sin bordes redondeados */
+}
+
+@media screen and (max-width: 576px) {
+    #secondNav{
+        display: none;
+    }
+}

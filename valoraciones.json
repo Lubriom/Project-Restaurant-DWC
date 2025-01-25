@@ -1,0 +1,22 @@
+[
+    {
+        "producto": "Hamburguesa doble queso",
+        "descripcion": "El tamaño de la hamburguesa increíble, quede lleno a reventar. El sabor de la carne es perfecto y el queso es delicioso. ¡Definitivamente volveré!", 
+        "autor": "Juan López"
+    }, 
+    {
+        "producto": "La ibérica",
+        "descripcion": "Me encanta el sabor de la carne, jugosa y bien cocinada. El pan es perfecto, suave pero firme. ¡La mejor hamburguesa de Aracena!", 
+        "autor": "María González"
+    }, 
+    {
+        "producto": "Pickle Chicken",
+        "descripcion": "Una opción ligera pero deliciosa. El pollo está bien sazonado y el toque de mayonesa casera es espectacular.", 
+        "autor": "Carmén Rodríguez"
+    }, 
+    {
+        "producto": "Pestiños Caseros", 
+        "descripcion": "Estan increibles los pestiños son los mejores que he probado, me recuerda a los que hacia mi abuela. ¡Lo recomiendo!",
+        "autor": "Pablo Martínez"
+    }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "proyecto_dwc",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "datatables.net-dt": "^2.2.1",
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.21.0",
+    "p5": "^1.11.3",
+    "p5play": "^3.26.7"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  }
+}

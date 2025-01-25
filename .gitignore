@@ -1,0 +1,9 @@
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+.odt 
+node_modules/  
+.vscode/
+package-lock.json
