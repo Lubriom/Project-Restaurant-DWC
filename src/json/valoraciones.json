@@ -1,0 +1,46 @@
+{
+    "en": [
+        {
+            "producto": "Double cheese burger",
+            "descripcion": "The size of the burger is incredible, stay full to burst. The taste of the meat is perfect and the cheese is delicious. Definitely come back!", 
+            "autor": "Juan Lopez"
+        }, 
+        {
+            "producto": "The Iberian",
+            "descripcion": "I love the taste of the meat, juicy and well cooked. The bread is perfect, soft but firm. The best hamburger in Aracena!", 
+            "autor": "Maria Gonzalez"
+        }, 
+        {
+            "producto": "Pickle Chicken",
+            "descripcion": "A light option but delicious. The chicken is well seasoned and the homemade mayonnaise touch is spectacular.", 
+            "autor": "Carmen Rodriguez"
+        }, 
+        {
+            "producto": "Pestiños Caseros",
+            "descripcion": "The Pestiños are incredible, the best I have tried, I remember my grandmother. I recommend!", 
+            "autor": "Pablo Martinez"
+        }
+    ], 
+    "es": [
+        {
+            "producto": "Hamburguesa doble queso",
+            "descripcion": "El tamaño de la hamburguesa increíble, quede lleno a reventar. El sabor de la carne es perfecto y el queso es delicioso. ¡Definitivamente volveré!", 
+            "autor": "Juan López"
+        }, 
+        {
+            "producto": "La ibérica",
+            "descripcion": "Me encanta el sabor de la carne, jugosa y bien cocinada. El pan es perfecto, suave pero firme. ¡La mejor hamburguesa de Aracena!", 
+            "autor": "María González"
+        }, 
+        {
+            "producto": "Pickle Chicken",
+            "descripcion": "Una opción ligera pero deliciosa. El pollo está bien sazonado y el toque de mayonesa casera es espectacular.", 
+            "autor": "Carmén Rodríguez"
+        }, 
+        {
+            "producto": "Pestiños Caseros", 
+            "descripcion": "Estan increibles los pestiños son los mejores que he probado, me recuerda a los que hacia mi abuela. ¡Lo recomiendo!",
+            "autor": "Pablo Martínez"
+        }
+    ]
+}

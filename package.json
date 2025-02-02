@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^4.4.7",
     "datatables.net-dt": "^2.2.1",
     "jquery": "^3.7.1",
     "jquery-validation": "^1.21.0",
-    "p5": "^1.11.3",
-    "p5play": "^3.26.7"
+    "pixi.js": "^8.7.2"
   },
   "devDependencies": {
     "vite": "^6.0.11"

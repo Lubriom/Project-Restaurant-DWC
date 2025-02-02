@@ -1,30 +1,35 @@
 import "/node_modules/jquery/dist/jquery.min.js";
 import "/node_modules/jquery-validation/dist/jquery.validate.min.js";
 import "/bootstrap/js/bootstrap.bundle.min.js";
- 
 
 var xmlhttp = new XMLHttpRequest();
-var url = "/valoraciones.json";
-
+var url = "/src/json/valoraciones.json"; 
+var datos;
+ 
 xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     var valoraciones = JSON.parse(this.responseText);
-    imprimirValoraciones(valoraciones);
+    imprimirValoraciones(valoraciones); 
+    datos = valoraciones
   }
 };
 xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xmlhttp.send(); 
+
+$("#changeLang").on("click", function () {
+  imprimirValoraciones(datos);
+});
 
 function imprimirValoraciones(array) {
   let out = "";
-  array.forEach((element) => {
+  array[$("html").attr("lang") !== "es" ? "es" : "en"].forEach((element) => {
     out += `
           <div class="col">
             <div class="card mb-3 shadow p-3 mb-5 bg-body-tertiary rounded">
               <div class="row g-0">
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">${element.producto}</h5>
+                    <h3 class="card-title h5">${element.producto}</h3>
                     <p class="card-text">
                       "${element.descripcion}"
                       <br><strong>- ${element.autor}</strong>
@@ -38,8 +43,18 @@ function imprimirValoraciones(array) {
   document.getElementById("testimonios").innerHTML = out;
 }
 
-$(document).ready(function () {
+// $("#changeLang").on("click", function () {
+//   xmlhttp.onreadystatechange = function () {
+//     if (this.readyState == 4 && this.status == 200) {
+//       var valoraciones = JSON.parse(this.responseText);
+//       imprimirValoraciones(valoraciones);
+//     }
+//   };
+//   xmlhttp.open("GET", url, true);
+//   xmlhttp.send();
+// });
 
+$(document).ready(function () {
   $.validator.addMethod(
     "pattern",
     function (value, element, param) {
@@ -49,7 +64,7 @@ $(document).ready(function () {
       const regex = new RegExp(param);
       return regex.test(value);
     },
-    "El formato ingresado no es válido." 
+    "El formato ingresado no es válido."
   );
 
   // Inicializar el validador
@@ -58,14 +73,14 @@ $(document).ready(function () {
       name: {
         required: true,
         minlength: 3,
-        pattern: /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]{3,25}$/, 
+        pattern: /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]{3,25}$/
       },
       platillo: {
         required: true
       },
       message: {
         required: true,
-        pattern:  /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s.,!?¿¡'"]{0,100}$/, 
+        pattern: /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s.,!?¿¡'"]{0,100}$/
       }
     },
     messages: {

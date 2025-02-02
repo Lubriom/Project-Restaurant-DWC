@@ -1,0 +1,122 @@
+[
+    {
+        "Producto": "Double Cheese Burger",
+        "Precio": "12.50€",
+        "Categoria": "Burgers"
+    },
+    {
+        "Producto": "The Iberic",
+        "Precio": "9.25€",
+        "Categoria": "Burgers"
+    },
+    {
+        "Producto": "Pickle Chicken",
+        "Precio": "7.75€",
+        "Categoria": "Burgers"
+    },
+    {
+        "Producto": "The traditional",
+        "Precio": "6.00€",
+        "Categoria": "Sandwiches"
+    },
+    {
+        "Producto": "La picada",
+        "Precio": "6.35€",
+        "Categoria": "Sandwiches"
+    },
+    {
+        "Producto": "Porked",
+        "Precio": "7.95€",
+        "Categoria": "Sandwiches"
+    },
+    {
+        "Producto": "Tiras de choco",
+        "Precio": "8.75€",
+        "Categoria": "Picar"
+    },
+    {
+        "Producto": "Papas bravas con pulpo",
+        "Precio": "9.35€",
+        "Categoria": "Picar"
+    },
+    {
+        "Producto": "Croquetas de jamón",
+        "Precio": "9.75€",
+        "Categoria": "Picar"
+    },
+    {
+        "Producto": "Torrijas",
+        "Precio": "5.99€",
+        "Categoria": "Desserts"
+    },
+    {
+        "Producto": "Churros",
+        "Precio": "4.45€",
+        "Categoria": "Desserts"
+    },
+    {
+        "Producto": "Pestiños caseros",
+        "Precio": "7.35€",
+        "Categoria": "Desserts"
+    },
+    {
+        "Producto": "Coke",
+        "Precio": "1.25€",
+        "Categoria": "Soda"
+    },
+    {
+        "Producto": "Pepsi",
+        "Precio": "1.05€",
+        "Categoria": "Soda"
+    },
+    {
+        "Producto": "Fanta Orange 1.25L",
+        "Precio": "1.31€",
+        "Categoria": "Soda"
+    },
+    {
+        "Producto": "Sprite 2L",
+        "Precio": "1.75€",
+        "Categoria": "Soda"
+    },
+    {
+        "Producto": "Bifrutas Mediterranean",
+        "Precio": "2.49€",
+        "Categoria": "Juices"
+    },
+    {
+        "Producto": "Bifrutas Tropical",
+        "Precio": "1.45€",
+        "Categoria": "Juices"
+    },
+    {
+        "Producto": "Gold Eagle",
+        "Precio": "1.45€",
+        "Categoria": "Beers"
+    },
+    {
+        "Producto": "Heineken",
+        "Precio": "1.37€",
+        "Categoria": "Beers"
+    },
+    {
+        "Producto": "Cruzcampo",
+        "Precio": "1.05€",
+        "Categoria": "Beers"
+    },
+    {
+        "Producto": "Galicia Star",
+        "Precio": "1.45€",
+        "Categoria": "Beers"
+    },
+    {
+        "Producto": "Casera - Jug",
+        "Precio": "1.85€",
+        "Categoria": "Wines"
+    },
+    {
+        "Producto": "Marqués de Murrieta - Wine",
+        "Precio": "26.50€",
+        "Categoria": "Wines"
+    }
+]

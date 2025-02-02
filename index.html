@@ -14,11 +14,11 @@
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"> 
-    <title>Inicio | Iberic Burgers </title>
+        rel="stylesheet">
+    <title data-translate="title-home">Inicio | Iberic Burgers</title> 
 </head>
 
-<body class="container-fluid p-0">
+<body class="container-fluid p-0" style="visibility: hidden;">
 
     <!-- Header -->
     <header class="sticky-top z-3">
@@ -29,44 +29,48 @@
                     Iberic Burgers
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvas"
-                    aria-controls="offCanvas" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="offCanvas" aria-expanded="false" aria-label="Activar barra de navegación" data-translate="nav-toggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-start bg-primary" id="offCanvas">
                     <div class="offcanvas-header border-bottom">
-                        <h5 class="offcanvas-title" id="offCanvasLabel">Navegación</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <h1 class="offcanvas-title h3" id="offCanvasLabel" data-translate="nav-title">Navegación</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar barra de navegación" data-translate="nav-close"></button>
                     </div>
                     <div class="offcanvas-body justify-content-end grid">
                         <ul class="navbar-nav d-flex align-items-center p-1">
                             <li class="nav-item text-center">
                                 <a class="nav-link active text-decoration-underline link-offset-3" aria-current="page"
-                                    href="/index.html">Inicio</a>
+                                    href="/index.html" data-translate="nav-link-start">Inicio</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="pages/comidas.html">Menú</a>
+                                <a class="nav-link" href="pages/comidas.html" data-translate="nav-link-menu">Menú</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="pages/valoraciones.html">Valoraciones</a>
+                                <a class="nav-link" href="pages/valoraciones.html"
+                                    data-translate="nav-link-valoracion">Valoraciones</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="pages/reserva.html">Reservar</a>
+                                <a class="nav-link" href="pages/reserva.html"
+                                    data-translate="nav-link-reserve">Reservar</a>
                             </li>
 
                             <div class="dropdown flex-column" data-bs-theme="light">
                                 <a class="btn btn-light dropdown-toggle d-flex align-items-center rounded-3" href="#"
                                     role="button" data-bs-toggle="dropdown" data-bs-display="static"
-                                    aria-expanded="false">
-                                    <img src="src/icons/spain.png" width="25" alt="Bandera de España">
-                                    Español
+                                    aria-expanded="false" id="buttonLang">
+                                    <img src="src/icons/es.png" width="25" alt="Bandera de España"
+                                        data-translate="nav-link-lang1">
+                                    <span data-translate="nav-link-span1">Español</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end rounded-3"
                                     aria-labelledby="dropdownMenuButton1">
                                     <li class="justify-content-center">
-                                        <a class="dropdown-item" href="pages/en/indexEN.html" data-bs-display="static">
-                                            <img src="src/icons/usa.png" width="25" alt="Bandera de Estados Unidos">
-                                            Ingles
-                                        </a>
+                                        <button class="dropdown-item" id="changeLang" data-bs-display="static">
+                                            <img src="src/icons/en.png" width="25" alt="Bandera de USA"
+                                                data-translate="nav-link-lang2">
+                                            <span data-translate="nav-link-span2">Ingles</span>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -83,54 +87,62 @@
             <div class="container pt-5 pb-5">
                 <div class="row d-flex flex-lg-row justify-content-center">
                     <div class="col-md-4 d-flex align-items-center mb-4">
-                        <h2 data-bs-toggle="tooltip" class="my-tooltip" data-bs-placement="top"
-                            title="Nuestra misión es hacerte sentir como en casa.">
+                        <h1 data-translate="index_main-title" class="h2">
                             En nuestra hamburguesería de Aracena no solo servimos comida, creamos momentos inolvidables
                             en familia.
-                        </h2>
+                        </h1>
                     </div>
                     <div class="col-md-4">
                         <img class="img-fluid w-100 img-cov" src="src/images/equipo.jpg"
-                            alt="Nuestro equipo trabajando entregando hamburguesas">
+                            alt="Nuestro equipo trabajando entregando hamburguesas" data-translate="index_main-img">
                     </div>
                 </div>
             </div>
         </div>
- 
+
         <div class="container-fluid bg-black text-white p-5">
-            <div class="container pt-5 pb-5">
-                <div>
-                        
+            <h2 class="text-center" data-translate="index_main-title2">Estadísticas</h2>
+            <div class="container pt-5 pb-5 d-flex flex-column">
+                <div class="pt-5 pb-5">
+                    <h2 class="h4" data-translate="index_main-title3">Numero de ventas por dia</h2>
+                    <canvas id="ventasDiarias" class="chart" height="100"></canvas>
+                </div>
+                <div class="pt-5 pb-5">
+                    <h2 class="h4" data-translate="index_main-title4">Hamburguesas más famosas</h2>
+                    <canvas id="masVendidas" class="chart" height="100"></canvas>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <!-- Sección de "Nuestros Valores" -->
         <div class="container-fluid bg-primary text-white p-5">
             <div class="container pt-5 pb-5">
                 <div class="row mt-4 mb-4">
                     <div class="col-lg-4 mb-4 mb-md-0">
-                        <h3 class="mb-3 text-uppercase">Quienes SOmos</h3>
-                        <p class="text-justify">
-                            Somos una empresa dedicada a la elaboracion de hamburguesas de calidad y de excelente
-                            sabor ubicada en Aracena, nos enfocamos en la calidad de nuestros productos unicamente
-                            locales.
+                        <h3 class="mb-3 text-uppercase" data-translate="who-title">Quienes Somos</h3>
+                        <p class="text-justify" data-translate="who-p">
+                            Somos una empresa dedicada a la elaboración de hamburguesas de calidad y de excelente sabor
+                            ubicada en Aracena, nos enfocamos en la calidad de nuestros productos únicamente locales.
                         </p>
                     </div>
                     <!-- Otras secciones -->
                     <div class="row col d-flex justify-content-around">
                         <div class="col-lg-3 mb-4 mb-md-0">
-                            <h3 class="mb-3 text-uppercase">Trabajo</h3>
-                            <p>En Iberic Burgers trabajamos de la mano con los mejores proveedores de Aracena.</p>
+                            <h3 class="mb-3 text-uppercase" data-translate="work-title">Trabajo</h3>
+                            <p data-translate="work-p">
+                                En Iberic Burgers trabajamos de la mano con los mejores proveedores de Aracena.
+                            </p>
                         </div>
                         <div class="col-lg-3 mb-4 mb-md-0">
-                            <h3 class="mb-3 text-uppercase">Productos</h3>
-                            <p>Nuestros productos son elaborados con la mejor materia prima y con los mejores
+                            <h3 class="mb-3 text-uppercase" data-translate="product-title">Productos</h3>
+                            <p data-translate="product-p">Nuestros productos son elaborados con la mejor materia prima y
+                                con los mejores
                                 ingredientes</p>
                         </div>
                         <div class="col-lg-3 mb-4 mb-md-0">
-                            <h3 class="mb-3 text-uppercase">Cultura</h3>
-                            <p>Promovemos la marca ibérica en Aracena, con el fin de fomentar la cultura</p>
+                            <h3 class="mb-3 text-uppercase" data-translate="culture-title">Cultura</h3>
+                            <p data-translate="culture-p">Promovemos la marca ibérica en Aracena, con el fin de fomentar
+                                la cultura</p>
                         </div>
                     </div>
                 </div>
@@ -142,36 +154,36 @@
     <footer class="container-fluid p-0 text-center text-lg-start bg-dark text-muted text-light" data-bs-theme="dark">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block">
-                <span>Conectate con nosotros por nuestras redes sociales:</span>
+                <span data-translate="social">Conectate con nosotros por nuestras redes sociales:</span>
             </div>
             <div class="d-flex justify-content-center social-icons">
-                <a href="https://www.facebook.com" class="icon-link me-4 text-reset">
+                <a href="https://www.facebook.com" class="icon-link me-4 text-reset" aria-label="Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" viewBox="0 0 16 16">
                         <path
                             d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
                     </svg>
                 </a>
-                <a href="https://instagram.com" class="icon-link me-4 text-reset">
+                <a href="https://instagram.com" class="icon-link me-4 text-reset" aria-label="Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
                         <path
                             d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
                             fill="#FFF" />
                     </svg>
                 </a>
-                <a href="https://tiktok.com" class="icon-link me-4 text-reset">
+                <a href="https://tiktok.com" class="icon-link me-4 text-reset" aria-label="TikTok">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF class=" bi-tiktok"
                         viewBox="0 0 16 16">
                         <path
                             d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
                     </svg>
                 </a>
-                <a href="https://youtube.com" class="icon-link me-4 text-reset">
+                <a href="https://youtube.com" class="icon-link me-4 text-reset" aria-label="Youtube">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#FFF" width="24" height="24" viewBox="0 0 16 16">
                         <path
                             d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
                     </svg>
                 </a>
-                <a href="https://x.com/" class="icon-link me-4 text-reset">
+                <a href="https://x.com/" class="icon-link me-4 text-reset" aria-label="X">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" viewBox="0 0 16 16">
                         <path
                             d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
@@ -189,34 +201,36 @@
                         </a>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Paginas
-                        </h6>
+                        <h4 class="text-uppercase fw-bold mb-4 h6" data-translate="link-pages">
+                            Páginas
+                        </h4>
                         <p>
-                            <a href="pages/comidas.html" class="text-reset">Menú</a>
+                            <a href="pages/comidas.html" class="text-reset" data-translate="link-menu">Menú</a>
                         </p>
                         <p>
-                            <a href="pages/bebidas.html" class="text-reset">Bebidas</a>
+                            <a href="pages/valoraciones.html" class="text-reset" data-translate="link-valoracion">Valoraciones</a>
                         </p>
                         <p>
-                            <a href="pages/contacto.html" class="text-reset">Contacto</a>
+                            <a href="pages/reserva.html" class="text-reset" data-translate="link-reserve">Reservar</a>
                         </p>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
+                        <h4 class="text-uppercase fw-bold mb-4 h6" data-translate="link-useful">
                             Links Útiles
-                        </h6>
+                        </h4>
                         <p>
-                            <a href="pages/es/aviso.html" class="text-reset">Aviso Legal</a>
+                            <a href="pages/es/aviso.html" class="text-reset" data-translate="link-advice">Aviso
+                                Legal</a>
                         </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                        <p><i class="fas fa-home me-3"></i> C. Gran Vía Infantes Don Carlos y Doña Luisa, 10, 21200
-                            Aracena, Huelva</p>
+                        <h4 class="text-uppercase fw-bold mb-4 h6" data-translate="foot-contact-title">Contacto</h4>
+                        <p><i class="fas fa-home me-3"></i><span>C. Gran Vía Infantes Don
+                                Carlos y Doña Luisa, 10, 21200
+                                Aracena, Huelva</span></p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            rlunmor063@g.educaand.es
+                            <span>rlunmor063@g.educaand.es</span>
                         </p>
                     </div>
                 </div>
@@ -224,9 +238,10 @@
         </section>
         <div class="text-center p-4 bt-1 bg-dark" data-bs-theme="dark">
             <p>© 2024 Copyright:</p>
-            <p class="fw-bold">Roy Lee Lunar More</p>
+            <p>Roy Lee Lunar More</p>
         </div>
     </footer>
+    <script src="/src/js/traduccion.js" type="module"></script>
     <script src="/src/js/main.js" type="module"></script>
 
 </body>

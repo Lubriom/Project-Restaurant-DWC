@@ -12015,4 +12015,8 @@ textarea.form-control-lg {
   #secondNav {
     display: none;
   }
-}/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=custom.css.map */ 
+ 
+.chart {
+  justify-content: center;
+}
