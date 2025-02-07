@@ -4,7 +4,8 @@ import "/node_modules/chart.js/dist/chart.umd.js";
 
 let ventasChart;
 let masVendidasChart;
-
+ 
+// Crear graficos
 function crearGraficos(lang) {
  
   if (ventasChart) ventasChart.destroy();

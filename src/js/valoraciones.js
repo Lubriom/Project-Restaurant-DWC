@@ -80,7 +80,8 @@ function initValidator() {
           'The message can only contain letters, spaces, and basic punctuation marks.'
       }
     }
-  };
+  }; 
+  
   // Inicializar el validador
   $('#formValoracion').validate({
     rules: {
