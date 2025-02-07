@@ -1,28 +1,15 @@
 import "/node_modules/jquery/dist/jquery.min.js";
 
-var xmlhttp = new XMLHttpRequest(); 
-var url;
-url = "/src/json/language.json";
+const xmlhttp = new XMLHttpRequest();
+const url = "/src/json/language.json"; 
+var traducciones;
 
 $(document).ready(function () {
-  $("html").attr("lang", window.localStorage.getItem("lang") == null ? "es" : window.localStorage.getItem("lang"));
+  $("html").attr("lang", window.localStorage.getItem("lang"));
 
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      var traducciones = JSON.parse(this.responseText);
-      cambiarIdioma(traducciones);
-    }
-  };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send(); 
-  document.body.style.visibility = "visible";
-});
-
-
-$("#changeLang").on("click", function () {
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var traducciones = JSON.parse(this.responseText);
+      traducciones = JSON.parse(this.responseText); 
       cambiarIdioma(traducciones);
     }
   };
@@ -30,9 +17,16 @@ $("#changeLang").on("click", function () {
   xmlhttp.send();
 });
 
-function cambiarIdioma(idioma) {
+$("#changeLang").on("click", function () {
+  $("html").attr("lang", $("html").attr("lang") == "en" ? "es" : "en");
+  window.localStorage.setItem("lang", $("html").attr("lang"));
+
+  cambiarIdioma(traducciones);
+});
+
+function cambiarIdioma(idioma) { 
   let elementos = document.querySelectorAll("[data-translate]");
-  let language = $("html").attr("lang") == "es" ? "ingles" : "espanol";
+  let language = $("html").attr("lang") == "es" ? "espanol" : "ingles";
 
   elementos.forEach((element) => {
     if (element.hasAttribute("alt")) {
@@ -48,12 +42,12 @@ function cambiarIdioma(idioma) {
     }
   });
 
-  $("html").attr("lang", $("html").attr("lang") == "es" ? "en" : "es");
   $("#buttonLang")
     .find("img")
-    .attr("src", `/src/icons/${$("html").attr("lang")}.png`);
+    .attr("src", `/src/icons/${$("html").attr("lang") == "es" ? "es" : "en"}.png`);
   $("#changeLang")
     .find("img")
     .attr("src", `/src/icons/${$("html").attr("lang") == "es" ? "en" : "es"}.png`);
-  window.localStorage.setItem("lang", $("html").attr("lang") == "es" ? "en" : "es");
+
+  document.body.style.display = "block";
 }

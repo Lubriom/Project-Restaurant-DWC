@@ -14,7 +14,7 @@ function crearGraficos(lang) {
   let labelsVentas = lang === "es" ? ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"] : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let labelVentas = lang === "es" ? "Ventas" : "Solds";
 
-  const labelsProductos = ["Doble Queso", "Iberic", "Pickle Chicken", "La tradicional", "El porcino", "Pestiños Caseros"];
+  const labelsProductos = lang === "es" ? ["Doble Queso", "La ibérica", "Pickle Chicken", "La tradicional", "El porcino", "Pestiños Caseros"] : ["Double Cheese", "The Iberic", "Pickle Chicken", "The tradicional", "Porked", "Pestiños Caseros"];
   const labelProductos = lang === "es" ? "Cantidad Vendida" : "Most famous";
 
   ventasChart = new Chart($("#ventasDiarias"), {
@@ -57,5 +57,5 @@ $(document).ready(function () {
 });
 
 $("#changeLang").on("click", function () {  
-  crearGraficos($("html").attr("lang") === "es" ? "en" : "es");
+  crearGraficos($("html").attr("lang") === "es" ? "es" : "en");
 });

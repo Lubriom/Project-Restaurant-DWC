@@ -12020,3 +12020,11 @@ textarea.form-control-lg {
 .chart {
   justify-content: center;
 }
+
+#buttonLang > img {
+  margin-right: 8px;
+}
+
+#buttonLang {
+  margin-left: 12px;
+}

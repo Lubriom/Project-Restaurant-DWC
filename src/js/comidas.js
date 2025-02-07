@@ -51,7 +51,6 @@ $(document).ready(function () {
   
   $("#changeLang").on("click", function () {
     fichero = $("html").attr("lang") !== "es" ? "/src/json/dataES.json" : "/src/json/dataEN.json";
-    console.log(fichero);
     tabla.destroy();
   
     tabla = $("#myTable").DataTable({
